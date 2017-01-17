@@ -22,7 +22,7 @@ class ViewController: UIViewController,UITableViewDelegate ,UITableViewDataSourc
     }
     
     func fetchArticles(){
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey=64872d87c2ca48f08e3d576a77a3f252")!)
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey=d4bfb06f77f94af390350aec6f48dc60")!)
         
         let task = URLSession.shared.dataTask(with: urlRequest){ (data,response,error) in
             
