@@ -39,10 +39,10 @@ class ViewController: UIViewController,UITableViewDelegate ,UITableViewDataSourc
                 if let articlesFromJson = json["articles"] as? [[String : AnyObject]] {
                     for articleFromJson in articlesFromJson{
                         let article = Article()
-                        if let title = articleFromJson["title"] as? String,
+                        if let title = articleFromJson["title"] as? String ,
                         let author = articleFromJson["author"] as? String ,
-                        let desc = articleFromJson["description"] as? String,
-                        let url = articleFromJson["url"] as? String,
+                        let desc = articleFromJson["description"] as? String ,
+                        let url = articleFromJson["url"] as? String ,
                         let urlToImage = articleFromJson["urlToImage"] as? String{
                             
                             article.author = author
@@ -74,6 +74,7 @@ class ViewController: UIViewController,UITableViewDelegate ,UITableViewDataSourc
         cell.title.text = self.articles?[indexPath.item].headline
         cell.desc.text = self.articles?[indexPath.item].desc
         cell.author.text = self.articles?[indexPath.item].author
+        cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageUrl!)!)
         
         return cell
     }
@@ -85,5 +86,26 @@ class ViewController: UIViewController,UITableViewDelegate ,UITableViewDataSourc
         return self.articles?.count ?? 0
     }
  
+}
+
+extension UIImageView{
+    
+    func downloadImage(from url: String){
+        
+        let urlRequest = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest){ (data,response,error) in
+            
+            if error != nil{
+                print(error)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+            }
+        }
+        task.resume()
+    }
 }
 
