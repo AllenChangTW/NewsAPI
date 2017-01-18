@@ -14,6 +14,10 @@
 		97E206FB1E2E177B006355B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E206F91E2E177B006355B4 /* LaunchScreen.storyboard */; };
 		97E207031E2E1F10006355B4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E207021E2E1F10006355B4 /* ArticleCell.swift */; };
 		97E207051E2E211C006355B4 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E207041E2E211C006355B4 /* Article.swift */; };
+		97E4DE5C1E2F3A180079BA2B /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E4DE5B1E2F3A180079BA2B /* WebviewViewController.swift */; };
+		97E4DE5E1E2F3D6F0079BA2B /* MeunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E4DE5D1E2F3D6F0079BA2B /* MeunManager.swift */; };
+		97E4DE601E2F41C10079BA2B /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E4DE5F1E2F41C10079BA2B /* BaseCell.xib */; };
+		97E4DE621E2F43BB0079BA2B /* BaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E4DE611E2F43BB0079BA2B /* BaseViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		97E206FC1E2E177B006355B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E207021E2E1F10006355B4 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		97E207041E2E211C006355B4 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		97E4DE5B1E2F3A180079BA2B /* WebviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
+		97E4DE5D1E2F3D6F0079BA2B /* MeunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeunManager.swift; sourceTree = "<group>"; };
+		97E4DE5F1E2F41C10079BA2B /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseCell.xib; path = ../BaseCell.xib; sourceTree = "<group>"; };
+		97E4DE611E2F43BB0079BA2B /* BaseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +69,15 @@
 				97E206F01E2E177B006355B4 /* AppDelegate.swift */,
 				97E206F21E2E177B006355B4 /* ViewController.swift */,
 				97E206F41E2E177B006355B4 /* Main.storyboard */,
+				97E4DE5D1E2F3D6F0079BA2B /* MeunManager.swift */,
+				97E4DE611E2F43BB0079BA2B /* BaseViewCell.swift */,
+				97E4DE5B1E2F3A180079BA2B /* WebviewViewController.swift */,
 				97E207041E2E211C006355B4 /* Article.swift */,
 				97E207021E2E1F10006355B4 /* ArticleCell.swift */,
 				97E206F71E2E177B006355B4 /* Assets.xcassets */,
 				97E206F91E2E177B006355B4 /* LaunchScreen.storyboard */,
 				97E206FC1E2E177B006355B4 /* Info.plist */,
+				97E4DE5F1E2F41C10079BA2B /* BaseCell.xib */,
 			);
 			path = "Tools-NewsAPI";
 			sourceTree = "<group>";
@@ -130,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E4DE601E2F41C10079BA2B /* BaseCell.xib in Resources */,
 				97E206FB1E2E177B006355B4 /* LaunchScreen.storyboard in Resources */,
 				97E206F81E2E177B006355B4 /* Assets.xcassets in Resources */,
 				97E206F61E2E177B006355B4 /* Main.storyboard in Resources */,
@@ -144,8 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				97E207051E2E211C006355B4 /* Article.swift in Sources */,
+				97E4DE621E2F43BB0079BA2B /* BaseViewCell.swift in Sources */,
+				97E4DE5C1E2F3A180079BA2B /* WebviewViewController.swift in Sources */,
 				97E206F31E2E177B006355B4 /* ViewController.swift in Sources */,
 				97E206F11E2E177B006355B4 /* AppDelegate.swift in Sources */,
+				97E4DE5E1E2F3D6F0079BA2B /* MeunManager.swift in Sources */,
 				97E207031E2E1F10006355B4 /* ArticleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +326,7 @@
 				97E207011E2E177B006355B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

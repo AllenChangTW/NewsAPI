@@ -13,16 +13,17 @@ class ViewController: UIViewController,UITableViewDelegate ,UITableViewDataSourc
     @IBOutlet weak var tableView: UITableView!
     
     var articles: [Article]? = []
+    var source = "techcrunch"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchArticles()
+        fetchArticles(fromSource: source)
     
     }
     
-    func fetchArticles(){
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey=d4bfb06f77f94af390350aec6f48dc60")!)
+    func fetchArticles(fromSource provider: String){
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=\(provider)&sortBy=top&apiKey=d4bfb06f77f94af390350aec6f48dc60")!)
         
         let task = URLSession.shared.dataTask(with: urlRequest){ (data,response,error) in
             
@@ -85,7 +86,22 @@ class ViewController: UIViewController,UITableViewDelegate ,UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.articles?.count ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let webVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "web") as! WebviewViewController
+        
+        webVC.url = self.articles?[indexPath.item].url
+        
+        self.present(webVC, animated: true, completion: nil)
+    }
  
+    let menuManager = MeunManager()
+    @IBAction func menuPressed(_ sender: Any) {
+        
+        menuManager.openMenu()
+        menuManager.mainVC = self
+    }
+    
 }
 
 extension UIImageView{
